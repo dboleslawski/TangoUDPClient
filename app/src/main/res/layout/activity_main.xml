@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.dboleslawski.tangoudpclient.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="15dp">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_tango"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Tango Service" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_high_rate_pose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100Hz pose updates"
+                android:checked="true" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_drift_correction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drift correction"
+                android:checked="true"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_smooth_pose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smooth pose"
+                android:checked="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/button_choose_adf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="choose adf" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:text="none" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_udp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textSize="16dp"
+                android:text="UDP Client" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editText_ip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="IP"
+                    android:inputType="textNoSuggestions" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editText_port"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="PORT"
+                    android:inputType="number" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FPS" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.atap.tango.ux.TangoUxLayout
+        android:id="@+id/layout_tango_ux"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
